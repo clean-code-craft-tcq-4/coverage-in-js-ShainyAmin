@@ -7,7 +7,7 @@ it('test to check temperature breach on PASSIVE_COOLING :', () => {
       .classifyTemperatureBreach( 'PASSIVE_COOLING', -1))
       .equals('TOO_LOW');
   expect(classifyTemperatureBreach
-      .classifyTemperatureBreach( 'PASSIVE_COOLING', 30))
+      .classifyTemperatureBreach( 'PASSIVE_COOLING', 31))
       .equals('NORMAL');
   expect(classifyTemperatureBreach
       .classifyTemperatureBreach( 'PASSIVE_COOLING', 36))
@@ -34,7 +34,7 @@ it('test to check temperature breach on MED_ACTIVE_COOLING :', () => {
       .classifyTemperatureBreach( 'MED_ACTIVE_COOLING', -1))
       .equals('TOO_LOW');
   expect(classifyTemperatureBreach
-      .classifyTemperatureBreach( 'MED_ACTIVE_COOLING', 30))
+      .classifyTemperatureBreach( 'MED_ACTIVE_COOLING', 35))
       .equals('NORMAL');
   expect(classifyTemperatureBreach
       .classifyTemperatureBreach( 'MED_ACTIVE_COOLING', 41))
