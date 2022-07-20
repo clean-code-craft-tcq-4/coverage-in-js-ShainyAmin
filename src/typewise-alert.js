@@ -4,16 +4,12 @@ const tempBreach = require('./typewise-temp-breach');
 
 function checkAndAlert(alertTarget, batteryChar, temperatureInC) {
   const breachType = tempBreach.classifyTemperatureBreach(batteryChar, temperatureInC);
-  let status = false;
   if (alertTarget == 'TO_CONTROLLER') {
-    status = controllerAlert.sendToController(breachType);
-    return status;
+    return controllerAlert.sendToController(breachType);
   } else if (alertTarget == 'TO_EMAIL') {
-    status = emailAlert.sendToEmail(breachType);
-    return status;
-  } else {
-    return false;
+    return emailAlert.sendToEmail(breachType);
   }
+  return false;
 }
 module.exports = {checkAndAlert};
 
